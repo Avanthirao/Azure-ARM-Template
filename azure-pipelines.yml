@@ -26,6 +26,7 @@ steps:
     resourceGroupName: 'MyResourceGroup'
     location: 'East US'
     templateLocation: 'Linked artifact'
+    csmFile: 'AzureDeploy.json'
     deploymentMode: 'Incremental'
 #     failOnStandardError: true
 

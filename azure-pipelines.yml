@@ -11,12 +11,22 @@ steps:
     version: '5.x'
     installationPath: $(Agent.ToolsDirectory)/dotnet
 
-- task: AzureCLI@2
+# - task: AzureCLI@2
+#   inputs:
+#     azureSubscription: 'AzureRM-Service'
+#     scriptType: 'bash'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: 'az group create --name MyResourceGroup --location eastus'
+- task: AzureResourceManagerTemplateDeployment@3
   inputs:
-    azureSubscription: 'AzureRM-Service'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az group create --name MyResourceGroup --location eastus'
-    failOnStandardError: true
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AzureRM-Service'
+    subscriptionId: 'ef745deb-a051-4a6a-aaaa-e999cc2d5691'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'MyResourceGroup'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    deploymentMode: 'Incremental'
+#     failOnStandardError: true
 
     

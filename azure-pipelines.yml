@@ -1,10 +1,8 @@
 trigger:
-  branches:
-    include:
-      - main
+- main
 
 pool:
-  vmImage: 'ubuntu-latest'
+ name: 'Agent-Self-Hosted'
 
 steps:
 - task: UseDotNet@2
@@ -16,10 +14,9 @@ steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'AzureRM-Service'
-    scriptType: 'pscore'
+    scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: |
-      az deployment group create --resource-group 'Your-Resource-Group' --template-file azuredeploy.json
+    inlineScript: 'az group create --name MyResourceGroup --location eastus'
     failOnStandardError: true
 
     

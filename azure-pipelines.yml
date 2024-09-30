@@ -21,3 +21,5 @@ steps:
     inlineScript: |
       az deployment group create --resource-group 'Your-Resource-Group' --template-file azuredeploy.json
     failOnStandardError: true
+
+    

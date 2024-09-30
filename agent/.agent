@@ -1,0 +1,8 @@
+﻿{
+  "agentId": 9,
+  "agentName": "AVANTHI",
+  "poolId": 10,
+  "poolName": "Agent-Self-Hosted",
+  "serverUrl": "https://dev.azure.com/avanthimirupala02/",
+  "workFolder": "_work"
+}

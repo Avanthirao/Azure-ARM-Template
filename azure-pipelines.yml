@@ -15,7 +15,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Azure subscription 1'
+    azureSubscription: 'AzureRM-Service'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: |
